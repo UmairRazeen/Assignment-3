@@ -1,0 +1,227 @@
+Umair Bashir
+Su92-bssem-f25-160
+SE-2C
+
+
+
+Problem 1: Count Even and Odd Numbers
+
+
+#include <iostream>
+using namespace std;
+
+int countEvenNumbers(int arr[], int size)
+{
+    int even = 0;
+
+    for(int i = 0; i < size; i++)
+    {
+        if(arr[i] % 2 == 0)
+        {
+            even++;
+        }
+    }
+
+    return even;
+}
+
+int countOddNumbers(int arr[], int size)
+{
+    int odd = 0;
+
+    for(int i = 0; i < size; i++)
+    {
+        if(arr[i] % 2 != 0)
+        {
+            odd++;
+        }
+    }
+
+    return odd;
+}
+
+int main()
+{
+    int n;
+
+    cout << "Enter Size of Array: ";
+    cin >> n;
+
+    int arr[n];
+
+    for(int i = 0; i < n; i++)
+    {
+        cout << "Enter Element: ";
+        cin >> arr[i];
+    }
+
+    cout << "Even Numbers = " << countEvenNumbers(arr, n) << endl;
+    cout << "Odd Numbers = " << countOddNumbers(arr, n);
+
+    return 0;
+}
+
+
+Problem 2: Display 2D Array
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int rows, cols;
+
+    cout << "Enter Rows: ";
+    cin >> rows;
+
+    cout << "Enter Columns: ";
+    cin >> cols;
+
+    int arr[10][10];
+
+    cout << "Enter Elements:" << endl;
+
+    for(int i = 0; i < rows; i++)
+    {
+        for(int j = 0; j < cols; j++)
+        {
+            cin >> arr[i][j];
+        }
+    }
+
+    cout << "2D Array:" << endl;
+
+    for(int i = 0; i < rows; i++)
+    {
+        for(int j = 0; j < cols; j++)
+        {
+            cout << arr[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+
+
+Problem 3: Complete Program (GCD)
+
+ #include <iostream>
+using namespace std;
+
+int findGCD(int a, int b)
+{
+    while(b != 0)
+    {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+
+    return a;
+}
+
+int main()
+{
+    int num1, num2;
+
+    cout << "Enter First Number: ";
+    cin >> num1;
+
+    cout << "Enter Second Number: ";
+    cin >> num2;
+
+    cout << "GCD = " << findGCD(num1, num2);
+
+    return 0;
+}
+
+
+Problem 4: Strike Rate Calculator
+
+#include <iostream>
+using namespace std;
+
+double calculateStrikeRate(int runs, int balls)
+{
+    return (double)runs / balls * 100;
+}
+
+int main()
+{
+    int runs, balls;
+
+    cout << "Enter Runs: ";
+    cin >> runs;
+
+    cout << "Enter Balls: ";
+    cin >> balls;
+
+    if(balls == 0)
+    {
+        cout << "Balls cannot be zero.";
+    }
+    else
+    {
+        cout << "Strike Rate = " << calculateStrikeRate(runs, balls);
+    }
+
+    return 0;
+}
+
+
+Problem 5: String Length
+
+
+#include <iostream>
+using namespace std;
+
+int getLength(char arr[])
+{
+    int length = 0;
+
+    for(int i = 0; arr[i] != '\0'; i++)
+    {
+        length++;
+    }
+
+    return length;
+}
+
+int main()
+{
+    char name[] = "Student";
+
+    cout << "Length = " << getLength(name);
+
+    return 0;
+}
+
+
+Problem 6: Copy Character Array
+
+#include <iostream>
+using namespace std;
+
+void copyWord(char src[], char dest[], int length)
+{
+    for(int i = 0; i < length; i++)
+    {
+        dest[i] = src[i];
+    }
+
+    dest[length] = '\0';
+}
+
+int main()
+{
+    char original[] = "Code";
+    char backup[10];
+
+    copyWord(original, backup, 4);
+
+    cout << "Copied String = " << backup;
+
+    return 0;
+}
