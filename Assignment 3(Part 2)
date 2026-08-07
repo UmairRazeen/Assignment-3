@@ -1,0 +1,225 @@
+Program 1:
+                      2nd Highest and 2nd Lowest values in an Array
+#include <iostream>
+using namespace std;
+
+int calculate2Low(int arr[], int n)
+{
+    int low = arr[0];
+    int secondLow = arr[1];
+
+    if(secondLow < low)
+    {
+        int temp = low;
+        low = secondLow;
+        secondLow = temp;
+    }
+
+    for(int i = 2; i < n; i++)
+    {
+        if(arr[i] < low)
+        {
+            secondLow = low;
+            low = arr[i];
+        }
+        else if(arr[i] < secondLow)
+        {
+            secondLow = arr[i];
+        }
+    }
+
+    return secondLow;
+}
+
+int calculate2High(int arr[], int n)
+{
+    int high = arr[0];
+    int secondHigh = arr[1];
+
+    if(secondHigh > high)
+    {
+        int temp = high;
+        high = secondHigh;
+        secondHigh = temp;
+    }
+
+    for(int i = 2; i < n; i++)
+    {
+        if(arr[i] > high)
+        {
+            secondHigh = high;
+            high = arr[i];
+        }
+        else if(arr[i] > secondHigh)
+        {
+            secondHigh = arr[i];
+        }
+    }
+
+    return secondHigh;
+}
+
+int main()
+{
+    int n;
+    cin >> n;
+
+    int arr[n];
+
+    for(int i=0; i<n; i++)
+        cin >> arr[i];
+    cout << "2nd Lowest = " << calculate2Low(arr,n) << endl;
+    cout << "2nd Highest = " << calculate2High(arr,n);
+
+    return 0;
+}
+
+Output:
+
+
+
+Program 2:
+                    Sum of an Array
+#include <iostream>
+using namespace std;
+
+int calculateSum(int arr[], int n)
+{
+    int sum = 0;
+
+    for(int i=0; i<n; i++)
+    {
+        sum = sum + arr[i];
+    }
+
+    return sum;
+}
+
+int main()
+{
+    int n;
+    cin >> n;
+
+    int arr[n];
+
+    for(int i=0; i<n; i++)
+        cin >> arr[i];
+
+    cout << "Sum = " << calculateSum(arr,n);
+
+    return 0;
+}
+
+Output:
+
+Program 3:
+                     Temperature Converter
+#include <iostream>
+using namespace std;
+
+double celsiusToFahrenheit(double c)
+{
+    return (c * 9 / 5) + 32;
+}
+
+int main()
+{
+    double c;
+
+    cin >> c;
+
+    cout << celsiusToFahrenheit(c);
+
+    return 0;
+}
+Output:
+
+Program 4:
+                   Leap Year
+#include <iostream>
+using namespace std;
+
+bool isLeapYear(int year)
+{
+    if((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0))
+        return true;
+
+    return false;
+}
+
+int main()
+{
+    cout << isLeapYear(2024);
+
+    return 0;
+}
+Output:
+
+Program 5:
+                     Vowel Counter
+#include <iostream>
+using namespace std;
+
+int countVowels(char word[])
+{
+    int count = 0;
+
+    for(int i=0; word[i]!='\0'; i++)
+    {
+        if(word[i]=='a' || word[i]=='e' || word[i]=='i' ||
+           word[i]=='o' || word[i]=='u')
+        {
+            count++;
+        }
+    }
+
+    return count;
+}
+
+int main()
+{
+    char word[50];
+
+    cin >> word;
+
+    cout << "Total Vowels: " << countVowels(word);
+
+    return 0;
+}
+Output:
+
+Program 6:
+         Alphabetical Sort
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    char arr[5];
+
+    for(int i=0; i<5; i++)
+        cin >> arr[i];
+
+    for(int i=0; i<4; i++)
+    {
+        for(int j=0; j<4-i; j++)
+        {
+            if(arr[j] > arr[j+1])
+            {
+                char temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+
+    cout << "Sorted Letters: ";
+
+    for(int i=0; i<5; i++)
+        cout << arr[i] << " ";
+
+    return 0;
+    }
+}
+}
+Output: 
+
+       
