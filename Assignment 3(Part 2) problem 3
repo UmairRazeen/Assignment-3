@@ -1,0 +1,20 @@
+Program 3:
+                     Temperature Converter
+#include <iostream>
+using namespace std;
+
+double celsiusToFahrenheit(double c)
+{
+    return (c * 9 / 5) + 32;
+}
+
+int main()
+{
+    double c;
+
+    cin >> c;
+
+    cout << celsiusToFahrenheit(c);
+
+    return 0;
+}
