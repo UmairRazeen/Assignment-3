@@ -1,0 +1,35 @@
+
+
+
+Problem 4: Strike Rate Calculator
+
+#include <iostream>
+using namespace std;
+
+double calculateStrikeRate(int runs, int balls)
+{
+    return (double)runs / balls * 100;
+}
+
+int main()
+{
+    int runs, balls;
+
+    cout << "Enter Runs: ";
+    cin >> runs;
+
+    cout << "Enter Balls: ";
+    cin >> balls;
+
+    if(balls == 0)
+    {
+        cout << "Balls cannot be zero.";
+    }
+    else
+    {
+        cout << "Strike Rate = " << calculateStrikeRate(runs, balls);
+    }
+
+    return 0;
+}
+
