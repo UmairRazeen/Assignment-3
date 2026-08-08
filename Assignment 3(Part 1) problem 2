@@ -1,0 +1,53 @@
+Problem 2 : Largest and Smallest values in an Array
+#include<iostream>
+using namespace std;
+
+int calculateLowest(int arr[], int n)
+{
+    int low = arr[0];
+
+    for(int i=1; i<n; i++)
+    {
+        if(arr[i] < low)
+        {
+            low = arr[i];
+        }
+    }
+
+    return low;
+}
+
+int calculateHighest(int arr[], int n)
+{
+    int high = arr[0];
+
+    for(int i=1; i<n; i++)
+    {
+        if(arr[i] > high)
+        {
+            high = arr[i];
+        }
+    }
+
+    return high;
+}
+
+int main()
+{
+    int n;
+
+    cout<<"Enter size of array: ";
+    cin>>n;
+
+    int arr[n];
+
+    for(int i=0; i<n; i++)
+    {
+        cin>>arr[i];
+    }
+
+    cout<<"Lowest Score = "<<calculateLowest(arr,n)<<endl;
+    cout<<"Highest Score = "<<calculateHighest(arr,n);
+
+    return 0;
+}
