@@ -1,0 +1,35 @@
+
+
+Problem 3: Complete Program (GCD)
+
+ #include <iostream>
+using namespace std;
+
+int findGCD(int a, int b)
+{
+    while(b != 0)
+    {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+
+    return a;
+}
+
+int main()
+{
+    int num1, num2;
+
+    cout << "Enter First Number: ";
+    cin >> num1;
+
+    cout << "Enter Second Number: ";
+    cin >> num2;
+
+    cout << "GCD = " << findGCD(num1, num2);
+
+    return 0;
+}
+
+
